@@ -1,0 +1,39 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Page Object test example">
+<!--    firefox , chrome-->
+    <parameter name="browserType" value="chrome" />
+    <parameter name="appURL"
+               value="http://localhost/orangehrm/public" />
+<listeners>
+    <listener class-name="utils.listeners.ReportListener"></listener>
+</listeners>
+    <test name="sample test">
+        <classes>
+<!--            trang chủ-->
+            <class name="testcases.HomePage.IndexPageTest"/>
+            <!--           Kiểm tra tính năng đăng ký tài khoản mới-->
+            <class name="testcases.SingUpPage.SignupTest"/>
+<!--            Đăng nhập -->
+            <class name="testcases.SignInPage.SignInTest"/>
+            <class name="testcases.SignInPage.SignInTestErrorCase"/>
+<!--            Kiểm tra tính năng quên mật khẩu-->
+            <class name="testcases.ForgotPasswordTest"/>
+<!--            Tìm kiếm sản phẩm-->
+            <class name="testcases.SearchPage.SearchResultPageTest"/>
+            <class name="testcases.SearchPage.SearchResultFailTest"/>
+<!--            Thêm sản phẩm vào giỏ hàng-->
+            <class name="testcases.AddToCart.AddToCartPageTest"/>
+            <class name="testcases.AddToCart.AddToCartFail"/>
+<!--            Kiểm tra giỏ hàng ( cart )-->
+            <class name="testcases.CartPage.CartPageTest"/>
+            <class name="testcases.CartPage.CartPageTestCoupo"/>
+<!--            Thanh toán và hoàn thành đơn hàng-->
+            <class name="testcases.CheckOut.CheckOutGeustTest"/>
+            <class name="testcases.CheckOut.FirstCheckOutAccountTest"/>
+            <class name="testcases.CheckOut.CheckOutWithAfterLoginTest"/>
+            <class name="testcases.CheckOut.CheckOutWithBeforeLoginTest"/>
+            <class name="testcases.CheckOut.CheckOutWithBankTransferTest"/>
+            <class name="testcases.CheckOut.CheckOutCoupoTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Page Object test example">
+    <!--    firefox , chrome-->
+    <parameter name="browserType" value="chrome" />
+    <parameter name="appURL"
+               value="http://localhost/orangehrm/public" />
+    <listeners>
+        <listener class-name="utils.listeners.ReportListener"></listener>
+    </listeners>
+    <test name="checkout">
+        <classes>
+            <class name="testcases.CheckOut.CheckOutGeustTest"/>
+            <class name="testcases.CheckOut.FirstCheckOutAccountTest"/>
+            <class name="testcases.CheckOut.CheckOutWithAfterLoginTest"/>
+            <class name="testcases.CheckOut.CheckOutWithBeforeLoginTest"/>
+            <class name="testcases.CheckOut.CheckOutWithBankTransferTest"/>
+            <class name="testcases.CheckOut.CheckOutCoupoTest"/>
+        </classes>
+    </test>
+</suite>
